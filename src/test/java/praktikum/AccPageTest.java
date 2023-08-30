@@ -22,7 +22,8 @@ public class AccPageTest {
     }
 
     //массив данных в аккордеоне
-    public static Object[][] answer() {
+    @Parameterized.Parameters
+    public static Object[][] data() {
         return new Object[][] {
                 {"Сутки — 400 рублей. Оплата курьеру — наличными или картой.", 0},
                 {"Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.", 1},
@@ -42,6 +43,4 @@ public class AccPageTest {
         String answer = mainPage.accordeonClick(accNumber);
         MatcherAssert.assertThat(result, equalTo(answer));
     }
-
-
 }
